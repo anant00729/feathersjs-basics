@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section class="header">
+        <div class="mx-auto container bg-white-900 w-full flex h-16 px-4 sm:px-12 md:px-24">
+            <div class="text-gray-900 text-center self-center my-auto mx-auto md:mx-0 text-xl">
+                Live Stream Project Idea
+            </div>
+        </div>
+    </section>
+
+    <section class="main-body bg-gray-700 min-h-screen">
+        <div class="mx-auto container w-full flex px-4 sm:px-12 md:px-24 flex-wrap">
+            <!-- // Form Section -->
+            <div class="lg:w-1/2 w-full flex flex-col my-6">
+                <h2 class="self-center text-lg text-white">Submit Your Ideas</h2>
+                <form id="form" class="mx-2 form">
+                    <input 
+                    id="idea-text"
+                    class="shadow mt-4 appearance-none border rounded w-full py-2 px-3 text-gray-800 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Idea name">
+                    <input 
+                    id="idea-tech"
+                    class="shadow mt-4 appearance-none border rounded w-full py-2 px-3 text-white-800 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Tech">
+                    <input 
+                    id="idea-viewer"
+                    class="shadow mt-4 appearance-none border rounded w-full py-2 px-3 text-white-800 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Author">
+                    <button 
+                    class="bg-indigo-500 mt-4 w-full hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                        Suggest Idea
+                    </button>
+                </form>
+            </div>
+            <!-- // List Section -->
+            <div class="lg:w-1/2 w-full my-6">
+                <ul class="lg:mt-10 mx-2" id="ideas">
+                    <!-- <li class="shadow rounded bg-gray-200 w-full p-4 lg:mx-4">
+                        <h1 class="text-lg">This is the idea</h1>
+                        <p>Submitted by Anant S Awasthy</p>
+                        <p class="pb-1">Time : 2:30 pm</p>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://unpkg.com/@feathersjs/client@^4.3.0/dist/feathers.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="./client.js"></script>
+</body>
+</html>
