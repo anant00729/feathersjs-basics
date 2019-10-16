@@ -26,7 +26,9 @@ class IdeaService {
 
 
     try {
-      const res_d = await Test.findAll()  
+      const res_d = await Test.findAll({order: [
+        ['id', 'DESC'],
+    ]})  
       this.ideas = res_d
 
     } catch (error) {
@@ -39,7 +41,6 @@ class IdeaService {
   }
   async create(data){
     const idea = {
-      id : this.ideas.length,
       text : data.text,
       tech : data.tech,
       viewer : data.viewer
@@ -54,10 +55,10 @@ class IdeaService {
       
       try{
 
-          const { id , text, tech } = idea 
+          const { text, tech } = idea 
 
           await Test.create({
-            id , text , tech , author : idea.viewer
+            text , tech , author : idea.viewer
           })
           // const res_d = await db.query(_t, {
           //     replacements: {text: idea.text, viewer: idea.viewer , tech : idea.tech},
@@ -85,7 +86,12 @@ app.use(_exp.json())
 app.configure(_socket())
 app.configure(_exp.rest())
 
-app.use('/ideas', new IdeaService())
+app.use('/ideas',  new IdeaService())
+
+
+console.log('_exp.Router() :', );
+
+
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
